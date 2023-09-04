@@ -9,8 +9,8 @@ export default function ScheduleForm() {
         console.log(data);
     }
 
-    return <div>
-        <form style={{display: "flex", flexDirection: "column", alignItems: "center"}}
+    return <div style={{display: "inline-block", borderRadius: "0.5rem", backgroundColor: "gray"}}>
+        <form style={{display: "flex", flexDirection: "column", alignItems: "center", gap: "2px"}}
               onSubmit={handleSubmit(onSubmit)}>
             <input {...register("title", {required: true})} placeholder={"Event Title"}/>
             <input {...register("place")} placeholder={"Add Place"}/>
