@@ -102,3 +102,28 @@ meter {
 :where(dialog:modal) {
   all: revert;
 }
+
+body > div {
+  /*background-color: #f7f8fa;*/
+  min-height: 100vh;
+  padding: 35px 72px;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav main";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-gap: 40px
+}
+
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+}
