@@ -6,8 +6,8 @@ interface ScheduleFormValues {
   place: string;
   date: string;
   time: string;
-  members: string;
-  notes: string;
+  member: string;
+  note: string;
 }
 
 const REQUIRED_ERR_MSG = "This field is required";
