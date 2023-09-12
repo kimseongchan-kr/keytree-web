@@ -4,6 +4,9 @@ enum FieldNames {
   TITLE = "title",
   PLACE = "place",
   DATE = "date",
+  TIME = "time",
+  MEMBER = "member",
+  NOTE = "note",
 }
 
 export const ScheduleFormFields = [
@@ -17,9 +20,6 @@ export const ScheduleFormFields = [
   {
     name: FieldNames.PLACE,
     placeholder: "Add Place",
-    options: {
-      required: false,
-    },
   },
   {
     name: FieldNames.DATE,
@@ -29,23 +29,23 @@ export const ScheduleFormFields = [
     },
     // type: "date",
   },
-  //   {
-  //     name: "time",
-  //     placeholder: "Add Time",
-  //
-  //     options: {
-  //       required: true,
-  //     },
-  //     // type: "time",
-  //   },
-  //   {
-  //     name: "members",
-  //     placeholder: "Add Members",
-  //   },
-  //   {
-  //     name: "notes",
-  //     placeholder: "Add Notes",
-  //   },
+  {
+    name: FieldNames.TIME,
+    placeholder: "Add Time",
+
+    options: {
+      required: true,
+    },
+    // type: "time",
+  },
+  {
+    name: FieldNames.MEMBER,
+    placeholder: "Add Members",
+  },
+  {
+    name: FieldNames.NOTE,
+    placeholder: "Add Notes",
+  },
 ];
 
 interface FieldOption {
@@ -54,5 +54,5 @@ interface FieldOption {
 
 export interface FieldType extends InputHTMLAttributes<HTMLInputElement> {
   name: FieldNames;
-  options: FieldOption;
+  options?: FieldOption;
 }
