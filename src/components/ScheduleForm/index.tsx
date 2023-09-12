@@ -33,7 +33,7 @@ export default function ScheduleForm() {
           {ScheduleFormFields.map((field: FieldType) => {
             const { name, options, ...attributes } = field;
             return (
-              <S.FieldItem>
+              <S.FieldItem key={name}>
                 <S.Input {...register(name, options)} {...attributes} />
                 {errors[name] && <S.ErrorMessage>{REQUIRED_ERR_MSG}</S.ErrorMessage>}
               </S.FieldItem>
