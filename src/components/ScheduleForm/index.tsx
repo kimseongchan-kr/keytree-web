@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { FieldType, ScheduleFormFields } from "@/components/ScheduleForm/data";
 
 interface ScheduleFormValues {
   title: string;
@@ -27,15 +28,15 @@ export default function ScheduleForm() {
       <form
         style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}
         onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("title", { required: true })} placeholder={"Event Title"} />
-        {errors.title && <span>{REQUIRED_ERR_MSG}</span>}
-        <input {...register("place")} placeholder={"Add Place"} />
-        <input {...register("date", { required: true })} placeholder={"Add Date"} />
-        {errors.date && <span>{REQUIRED_ERR_MSG}</span>}
-        <input {...register("time", { required: true })} placeholder={"Add Time"} />
-        {errors.time && <span>{REQUIRED_ERR_MSG}</span>}
-        <input {...register("members")} placeholder={"Add Members"} />
-        <input {...register("notes")} placeholder={"Add Notes"} />
+        {ScheduleFormFields.map((field: FieldType) => {
+          const { name, options, ...attributes } = field;
+          return (
+            <>
+              <input {...register(name, options)} {...attributes} />
+              {errors[name] && <span>{REQUIRED_ERR_MSG}</span>}
+            </>
+          );
+        })}
         <button>add</button>
       </form>
     </div>
