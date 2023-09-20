@@ -4,12 +4,12 @@ import { Container, Schedule } from "./style";
 
 import { DateData } from "@/pages/schedule/components/Table";
 
-interface DateRender {
+interface DateRenderProps {
   timeZone?: number;
   data: DateData[];
 }
 
-const DateRender = ({ timeZone = 24, data }: DateRender) => {
+const DateRender = ({ timeZone = 24, data }: DateRenderProps) => {
   const renderData = data.map((schedule) => {
     const startDate = dayjs(schedule.startedAt).hour();
     const finishDate = dayjs(schedule.finishedAt).hour();

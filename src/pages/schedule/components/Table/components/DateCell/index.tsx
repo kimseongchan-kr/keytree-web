@@ -1,10 +1,10 @@
 import { PropsWithChildren } from "react";
 
-interface Body {
+interface DateCellProps {
   timeZone?: number;
 }
 
-const DateCell = ({ timeZone, children }: PropsWithChildren<Body>) => {
+const DateCell = ({ timeZone, children }: PropsWithChildren<DateCellProps>) => {
   return (
     <div>
       {timeZone

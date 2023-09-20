@@ -9,7 +9,7 @@ export interface DateData {
   finishedAt: string;
 }
 
-interface Table {
+interface TableProps {
   title: string;
   timeZone?: number;
   width?: number;
@@ -17,7 +17,14 @@ interface Table {
   data: DateData[];
 }
 
-const Table = ({ title, timeZone, data, width, height, children }: PropsWithChildren<Table>) => {
+const Table = ({
+  title,
+  timeZone,
+  data,
+  width,
+  height,
+  children,
+}: PropsWithChildren<TableProps>) => {
   return (
     <Container width={width} height={height}>
       <div className="table-sell head">{title}</div>
