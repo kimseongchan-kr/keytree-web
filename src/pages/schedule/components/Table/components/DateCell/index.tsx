@@ -1,6 +1,4 @@
-import styled from "@emotion/styled";
 import { PropsWithChildren } from "react";
-import DateRender from "@/pages/schedule/components/Table/components/DateRender";
 
 interface Body {
   timeZone?: number;
