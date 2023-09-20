@@ -1,7 +1,8 @@
-import styled from "@emotion/styled";
-import DateCell from "./components/Body";
-import DateRender from "@/pages/schedule/components/Table/components/DateRender";
 import { PropsWithChildren } from "react";
+
+import styled from "@emotion/styled";
+
+import { DateCell, DateRender } from "./components";
 
 export interface DateData {
   startedAt: string;
