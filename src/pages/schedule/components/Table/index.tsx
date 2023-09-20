@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-import styled from "@emotion/styled";
+import { Container, Body } from "./style";
 
 import { DateCell, DateRender } from "./components";
 
@@ -29,24 +29,5 @@ const Table = ({ title, timeZone, data, width, height, children }: PropsWithChil
     </Container>
   );
 };
-
-const Container = styled.div<{ width?: number; height?: number }>`
-  .head {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .table-sell {
-    width: ${({ width }) => (width ? `${width}px` : "100%")};
-    height: ${({ height }) => (height ? `${height}px` : "100%")};
-    border: 2px solid #f5f6f7;
-    border-collapse: collapse;
-  }
-`;
-
-const Body = styled.div`
-  position: relative;
-`;
 
 export default Table;
