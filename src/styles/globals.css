@@ -103,8 +103,11 @@ meter {
   all: revert;
 }
 
+body {
+  background-color: #f7f8fa;
+}
+
 body > div {
-  /*background-color: #f7f8fa;*/
   min-height: 100vh;
   padding: 35px 72px;
   display: grid;
